@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom settings
+.vscode/settings.json
+local_wsgi.py
+local_manage.py
