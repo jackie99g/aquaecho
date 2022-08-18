@@ -1,0 +1,19 @@
+{
+    "name": "aquaecho",
+    "description": "aquaecho",
+    "website": "https://github.com/jackie99g/aquaecho",
+    "repository": "https://github.com/jackie99g/aquaecho",
+    "logo": "https://jackie99g.github.io/aquaprojects_staticfiles/images/icon.svg",
+    "success_url": "/",
+    "env": {
+        "DJANGO_SECRET_KEY": {
+            "description": "DJANGO_SECRET_KEY",
+            "generator": "secret"
+        },
+        "CRON_URL": {
+            "description": "CRON_URL",
+            "value": ""
+        }
+    },
+    "stack": "container"
+}
