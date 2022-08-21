@@ -10,6 +10,15 @@
             "request": "launch",
             "module": "cron",
             "justMyCode": true
+        },
+        {
+            "name":"Python: Django local",
+            "type":"python",
+            "request":"launch",
+            "program":"${workspaceFolder}${pathSeparator}aquaecho${pathSeparator}local_manage.py",
+            "args":["runserver"],
+            "django":true,
+            "justMyCode":true
         }
     ]
 }
