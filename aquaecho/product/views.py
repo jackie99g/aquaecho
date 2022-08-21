@@ -29,11 +29,12 @@ class Index(View):
 
     def _gte_meta_data(self, meta_data: dict) -> str:
         classinfo = str | bool | int | float | list | tuple
-        remove_keys = []
+        _meta_data = {}
+        copyable_keys = []
         for key in meta_data.keys():
-            if not isinstance(meta_data[key], classinfo):
-                remove_keys.append(key)
-        for key in remove_keys:
-            meta_data.pop(key)
-        meta_data_json = dumps(meta_data)
+            if isinstance(meta_data[key], classinfo):
+                copyable_keys.append(key)
+        for key in copyable_keys:
+            _meta_data.setdefault(key, meta_data[key])
+        meta_data_json = dumps(_meta_data)
         return meta_data_json
