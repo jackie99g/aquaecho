@@ -22,6 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     import os
     DJANGO_SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    DJANGO_DATABASES_ENGINE = os.environ['DJANGO_DATABASES_ENGINE']
+    DJANGO_DATABASES_NAME = os.environ['DJANGO_DATABASES_NAME']
+    DJANGO_DATABASES_USER = os.environ['DJANGO_DATABASES_USER']
+    DJANGO_DATABASES_PASSWORD = os.environ['DJANGO_DATABASES_PASSWORD']
+    DJANGO_DATABASES_HOST = os.environ['DJANGO_DATABASES_HOST']
+    DJANGO_DATABASES_PORT = os.environ['DJANGO_DATABASES_PORT']
 except ValueError as exc:
     raise ValueError('Couldn\'t import DJANGO_SECRET_KEY.') from exc
 
@@ -96,8 +102,12 @@ WSGI_APPLICATION = 'aquaecho.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': str(DJANGO_DATABASES_ENGINE),
+        'NAME': str(DJANGO_DATABASES_NAME),
+        'USER': str(DJANGO_DATABASES_USER),
+        'PASSWORD': str(DJANGO_DATABASES_PASSWORD),
+        'HOST': str(DJANGO_DATABASES_HOST),
+        'PORT': str(DJANGO_DATABASES_PORT),
     }
 }
 
