@@ -3,4 +3,4 @@ services:
   - type: web
     name: aquaecho
     env: docker
-    dockerCommand: supervisord -n -c supervisord.conf
+    startCommand: supervisord -n -c supervisord.conf
