@@ -14,6 +14,4 @@ RUN pip3.10 install --upgrade pip setuptools
 
 RUN pip3.10 install -r requirements.txt
 
-RUN /usr/local/bin/python3.10 aquaecho/manage.py migrate
-
 WORKDIR /usr/src/app
