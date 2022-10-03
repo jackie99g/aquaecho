@@ -1,4 +1,4 @@
-FROM jackie99/aquadebian:latest
+FROM python:3.10.7-bullseye
 
 RUN pip3.10 install supervisor
 
